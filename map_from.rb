@@ -22,5 +22,15 @@ end
 
 puts capitalized_words.inspect
 
+
+numbers = [5, 4, 7, 2]
+
+squared_numbers = map_from(numbers) do |n|
+  n * n
+end
+
+puts squared_numbers.inspect
+
 # When you run this script, you should see the following output:
 #   ["Apples", "Oranges", "Bananas", "Pears"]
+#   [25, 16, 49, 4]
