@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ruby &lt;=&gt; JavaScript Rosetta</title>
+  <script>
+    // Rule of thumb: put a semicolon at the end of every line that doesn't end in a curly
+
+    // Simple output
+    // =============
+
+    // Ruby:
+
+    // puts "howdy!"
+
+    // JavaScript:
+
+    // alert("howdy!");
+
+
+    // Declaring local variables
+    // =========================
+
+    // Ruby:
+
+    // name = "Raghu"
+    // puts "howdy, #{name}!"
+
+    // JavaScript:
+
+    // var name = "Raghu";
+    // alert("howdy, " + name + "!");
+
+    // Note: there's no String interpolation in JS
+
+
+    // Defining and calling methods
+    // ============================
+
+    // Ruby:
+
+    // def greet
+    //   puts "howdy!"
+    // end
+
+    // greet
+
+    // JavaScript:
+
+    // function greet() {
+    //   alert("howdy!");
+    // }
+
+    // greet();
+
+
+    // Methods that accept arguments
+    // =============================
+
+    // Ruby:
+
+    // def greet(name)
+    //   puts "howdy, #{name}!"
+    // end
+
+    // JavaScript:
+
+    // function greet(name) {
+    //   alert("howdy, " + name + "!");
+    // }
+
+    // greet("Raghu");
+
+
+    // Conditionals
+    // ============
+
+    // Ruby:
+
+    // city = "Toledo"
+    // if city == "Chicago"
+    //   puts "You live in the best city ever!"
+    // else
+    //   puts "You live in a so-so city."
+    // end
+
+    // JavaScript:
+
+    // var city = "Toledo";
+    // if (city === "Chicago") {
+    //   alert("You live in the best city ever!");
+    // }
+    // else {
+    //   alert("You live in a so-so city.");
+    // }
+
+    // Beware: there's also a == (non-strict equivalence) operator. Look it up.
+
+
+    // Incrementing integers
+    // =====================
+
+    // Ruby:
+
+    // i += 1
+
+    // JavaScript:
+
+    // i++
+
+
+    // For loops
+    // =========
+
+    // Ruby:
+
+    // for i in 2...6
+    //   puts i * i
+    // end
+
+    // JavaScript:
+
+    // for (var i = 2; i < 6; i++) {
+    //   alert(i * i);
+    // }
+
+
+    // Methods that accept blocks of code
+    // ==================================
+
+    // Ruby:
+
+    // def announce(&instructions)
+    //   puts "********** DEAR PASSENGER **********"
+    //   instructions.call
+    //   puts "********** THANK YOU FOR FLYING ONE-WAY AIR **********"
+    // end
+
+    // announce do
+    //   puts "Your flight is boarding in 5 minutes."
+    // end
+
+    // JavaScript:
+
+    // function announce(instructions) {
+    //   alert("********** DEAR PASSENGER **********");
+    //   instructions();
+    //   alert("********** THANK YOU FOR FLYING ONE-WAY AIR **********");
+    // }
+
+    // announce(function() {
+    //   alert("Your flight is boarding in 5 minutes.");
+    // });
+
+
+    // Methods that accept arguments and blocks
+    // ========================================
+
+    // Ruby:
+
+    // def announce(salutation, valediction, &instructions)
+    //   puts "********** #{salutation} **********"
+    //   instructions.call
+    //   puts "********** #{valediction} **********"
+    // end
+
+    // announce("DEAR PASSENGER", "THANK YOU FOR FLYING ONE-WAY AIR") do
+    //   puts "Your flight is boarding in 5 minutes."
+    // end
+
+    // JavaScript:
+
+    // function announce(salutation, valediction, instructions) {
+    //   alert("********** " + salutation + " **********");
+    //   instructions();
+    //   alert("********** " + valediction + " **********");
+    // }
+
+    // announce("DEAR PASSENGER", "THANK YOU FOR FLYING ONE-WAY AIR", function() {
+    //   alert("Your flight is boarding in 5 minutes.");
+    // });
+
+
+    // Providing block variables
+    // =========================
+
+    // Ruby:
+
+    // def announce(&instructions)
+    //   puts "********** DEAR PASSENGER **********"
+    //   instructions.call("*")
+    //   puts "********** THANK YOU FOR FLYING ONE-WAY AIR **********"
+    // end
+
+    // announce do |special_character|
+    //   puts "#{special_character} Your flight is boarding in 5 minutes. #{special_character}"
+    // end
+
+    // JavaScript:
+
+    // function announce(instructions) {
+    //   alert("********** DEAR PASSENGER **********");
+    //   instructions("*");
+    //   alert("********** THANK YOU FOR FLYING ONE-WAY AIR **********");
+    // }
+
+    // announce(function(specialCharacter) {
+    //   alert(specialCharacter + " Your flight is boarding in 5 minutes. " + specialCharacter);
+    // });
+
+
+    // Methods with arguments, blocks, and block variables
+    // ===================================================
+
+    // Ruby:
+
+    // def announce(salutation, valediction, &instructions)
+    //   puts "********** #{salutation} **********"
+    //   instructions.call("*")
+    //   puts "********** #{valediction} **********"
+    // end
+
+    // announce("DEAR PASSENGER", "THANK YOU FOR FLYING ONE-WAY AIR") do |special_character|
+    //   puts "#{special_character} Your flight is boarding in 5 minutes. #{special_character}"
+    // end
+
+    // JavaScript:
+
+    // function announce(salutation, valediction, instructions) {
+    //   alert("********** " + salutation + " **********");
+    //   instructions("*");
+    //   alert("********** " + valediction + " **********");
+    // }
+
+    // announce("DEAR PASSENGER", "THANK YOU FOR FLYING ONE-WAY AIR", function(specialCharacter) {
+    //   alert(specialCharacter + " Your flight is boarding in 5 minutes. " + specialCharacter);
+    // });
+
+
+    // Arrays
+    // ======
+
+    // Ruby:
+
+    // fruits = ["apples", "oranges", "bananas"]
+    // puts fruits[1]
+    // puts fruits.length
+
+    // JavaScript:
+
+    // var fruits = ["apples", "oranges", "bananas"];
+    // alert(fruits[1]);
+    // alert(fruits.length);
+
+
+    // CHALLENGE
+    // =========
+
+    // Translate the following Ruby into Javascript.
+
+    // def for_each_in(array, &instructions)
+    //   for i in 0...array.length
+    //     instructions.call(array[i])
+    //   end
+    // end
+
+    // fruits = ["apples", "oranges", "bananas", "pears"]
+
+    // for_each_in(fruits) do |f|
+    //   puts "I like #{f}."
+    // end
+  </script>
+</head>
+<body>
+
+</body>
+</html>
