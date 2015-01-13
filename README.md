@@ -1,8 +1,4 @@
-Quit all apps
-cd ~/code/s14
-git clone https://github.com/s14/blocks
-cd blocks
-subl .
+# Chunks of code as arguments
 
 Examine each of the following Ruby scripts. Read the code, run them, change the code; experiment with them and try to understand what is going on.
 
