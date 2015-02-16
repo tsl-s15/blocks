@@ -10,8 +10,8 @@ In order:
  - for.rb
 
  1. Think of questions!
- 1. Attempt to define the for_each_in method in for_each_in.rb
- 1. Attempt to define the select_from method in select_from.rb
- 1. Attempt to define the reject_from method in select_from.rb
- 1. Attempt to define the map_from method in map_from.rb
+ 1. Attempt to define the `for_each_in` method in for_each_in.rb
+ 1. Attempt to define the `select_from` method in select_from.rb
+ 1. Attempt to define the `reject_from` method in select_from.rb
+ 1. Attempt to define the `map_from` method in map_from.rb
 
