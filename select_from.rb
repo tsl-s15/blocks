@@ -6,7 +6,13 @@
 # Your code goes here
 # ===================
 
-# def select_from...
+def select_from(list, &instructions)
+  list.map do |item|
+    if instructions.call(item)
+      item
+    end
+  end.compact
+end
 
 
 

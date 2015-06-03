@@ -8,3 +8,10 @@ h1_tag do
   puts "howdy!"
   puts "My name is Raghu"
 end
+
+h1_tag do
+  puts "goodbye"
+end
+
+
+

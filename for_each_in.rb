@@ -6,7 +6,16 @@
 # Your code goes here
 # ===================
 
-# def for_each_in...
+def for_each_in(list, &instructions)
+  for item in list do
+    instructions.call(item)
+  end
+end
+
+
+# for element in array do
+#   element.do_stuff
+# end
 
 
 
